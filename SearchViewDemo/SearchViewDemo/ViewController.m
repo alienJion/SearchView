@@ -18,10 +18,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self inputSearch];
+    [self noInputSearch];
+}
+-(void)inputSearch{
     self.search = [[SearchView alloc]init];
     self.search.image = [UIImage imageNamed:@"search"];
     self.search.filletValue = 10;
-    [self.search.searchButton addTarget:self action:@selector(touchSearchEvent:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.search];
     [self.search mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(15);
@@ -30,6 +33,21 @@
         make.height.offset(40);
     }];
 }
+-(void)noInputSearch{
+    self.search = [[SearchView alloc]init];
+    self.search.image = [UIImage imageNamed:@"search"];
+    self.search.filletValue = 10;
+    self.search.secrchTextField.placeholder = @"点击搜索框跳转";
+    [self.search.searchButton addTarget:self action:@selector(touchSearchEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.search];
+    [self.search mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(15);
+        make.top.offset(300);
+        make.right.offset(-15);
+        make.height.offset(40);
+    }];
+}
+
 -(void)touchSearchEvent:(UIButton *)btn{
     NSLog(@"您点击了搜索");
 }

@@ -15,18 +15,13 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "SearchView"
-  spec.version      = "0.0.1"
-  spec.summary      = "这是一个自定义搜索框."
+  spec.name         = "SearchView" #存储库名称
+  spec.version      = "0.0.1" #版本号，与tag值一致
+  spec.summary      = "这是一个自定义搜索框." #简介
 
-  # This description is used to generate tags and improve search results.
-  #   * Think: What does it do? Why did you write it? What is the focus?
-  #   * Try to keep it short, snappy and to the point.
-  #   * Write the description between the DESC delimiters below.
-  #   * Finally, don't worry about the indent, CocoaPods strips it!
-  spec.description  = "为了满足项目使用需求，自定义搜索框"
+  spec.description  = "为了满足项目使用需求，自定义搜索框"#描述
 
-  spec.homepage     = "https://github.com/alienJion/SearchView"
+  spec.homepage     = "https://github.com/alienJion/SearchView" #项目主页，不是git地址
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -37,7 +32,7 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = { :type => "MIT", :file => "LICENSE" }
+  spec.license      = { :type => "MIT", :file => "LICENSE" } #开源协议
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -50,12 +45,12 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = { "alien" => "alienvvip@126.com" }
+  spec.author             = { "alien" => "alienvvip@126.com" } #作者
   
-  spec.platform     = :ios, "5.0"
+  spec.platform     = :ios, "5.0"  #支持的平台和版本号
 
 
-  spec.source       = { :git => "https://github.com/alienJion/SearchView.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/alienJion/SearchView.git", :tag => "#{spec.version}" } #存储库的git地址，以及tag值
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -66,22 +61,13 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-#  spec.source_files  = "Classes", "Classes/**/*.{h,m}"
-#  spec.exclude_files = "Classes/Exclude"
-  spec.source_files = "Classes", "Classes/**/*"
-  # spec.public_header_files = "Classes/**/*.h"
+  spec.source_files = "Classes", "Classes/**/*" #需要托管的源代码路径  Classes文件夹下的所有文件。当前文件和Classes文件在同一目录
+  
 
 
-  # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  A list of resources included with the Pod. These are copied into the
-  #  target bundle with a build phase script. Anything else will be cleaned.
-  #  You can preserve files from being cleaned, please don't preserve
-  #  non-essential files like tests, examples and documentation.
-  #
 
   # spec.resource  = "icon.png"
-  # spec.resources = "Resources/*.png"
+  # spec.resources = "Resources/*.png"#资源库下的所有png图片，暂时不会使用
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
@@ -108,6 +94,6 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  spec.dependency "Masonry"
+  spec.dependency "Masonry" #需要依赖的第三方类库，依赖一个写一个
 
 end

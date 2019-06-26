@@ -17,7 +17,7 @@
 {
     self = [super init];
     if (self) {
-        self.backgroundColor = [UIColor grayColor];
+        self.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:.8f];
         [self imageButton];
         [self secrchTextField];
         
@@ -36,7 +36,7 @@
 - (UIButton *)imageButton{
     if (_imageButton == nil) {
         _imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_imageButton setImage:[UIImage imageNamed:@"search"] forState:UIControlStateNormal];
+        [_imageButton setImage:[UIImage imageNamed:@"～/Classes/SearchView/images/search.png"] forState:UIControlStateNormal];
         [_imageButton setTitle:@"" forState:UIControlStateNormal];
         [self addSubview:_imageButton];
         [_imageButton mas_makeConstraints:^(MASConstraintMaker *make) {

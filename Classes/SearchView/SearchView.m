@@ -7,6 +7,7 @@
 //
 
 #import "SearchView.h"
+#import "Masonry.h"
 @interface SearchView()
 @property(nonatomic,strong)UIButton *imageButton;
 @end
@@ -16,7 +17,7 @@
 {
     self = [super init];
     if (self) {
-        self.backgroundColor = XJSearchGrayColor;
+        self.backgroundColor = [UIColor grayColor];
         [self imageButton];
         [self secrchTextField];
         
@@ -49,8 +50,8 @@
     if (_secrchTextField == nil) {
         _secrchTextField = [[UITextField alloc]init];
         [self addSubview:_secrchTextField];
-        _secrchTextField.placeholder = @"搜索好友";
-        _secrchTextField.font = YFontSize14;
+        _secrchTextField.placeholder = @"搜索";
+        _secrchTextField.font = [UIFont systemFontOfSize:14.0f];
         _secrchTextField.returnKeyType = UIReturnKeySearch;
         [_secrchTextField mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.bottom.right.offset(0);

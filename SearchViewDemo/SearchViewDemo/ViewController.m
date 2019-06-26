@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
-
+#import <SearchView.h>
+#import <Masonry.h>
 @interface ViewController ()
+@property(nonatomic,strong)SearchView *search;
 
 @end
 
@@ -16,8 +18,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.search = [[SearchView alloc]init];
+    self.search.image = [UIImage imageNamed:@"search"];
+    self.search.filletValue = 10;
+    [self.search.searchButton addTarget:self action:@selector(touchSearchEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.search];
+    [self.search mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(15);
+        make.top.offset(100);
+        make.right.offset(-15);
+        make.height.offset(40);
+    }];
 }
-
+-(void)touchSearchEvent:(UIButton *)btn{
+    NSLog(@"您点击了搜索");
+}
 
 @end

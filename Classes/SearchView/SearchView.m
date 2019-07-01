@@ -20,7 +20,7 @@
         self.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:.8f];
         [self imageButton];
         [self secrchTextField];
-        
+        [self searchButton];
         self.layer.cornerRadius = 10;
         self.layer.masksToBounds = YES;
     }

@@ -5,6 +5,6 @@ target 'SearchViewDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'Masonry'
-  pod 'SearchView', :path => "../"
+  pod 'SearchView', :path => "../" #退到上一层文件夹，找.podspec文件
 
 end

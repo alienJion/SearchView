@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "SearchView" #存储库名称
-  spec.version      = "0.0.2" #版本号，与tag值一致
+  spec.version      = "0.0.3" #版本号，与tag值一致
   spec.summary      = "这是一个自定义搜索框." #简介
 
   spec.description  = "为了满足项目使用需求，自定义搜索框"#描述

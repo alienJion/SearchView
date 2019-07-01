@@ -2,7 +2,7 @@
 //  ViewController.m
 //  SearchViewDemo
 //
-//  Created by 杨炯 on 2019/6/26.
+//  Created by young on 2019/6/26.
 //  Copyright © 2019 alien. All rights reserved.
 //
 
@@ -38,7 +38,10 @@
     self.search.image = [UIImage imageNamed:@"search"];
     self.search.filletValue = 10;
     self.search.secrchTextField.placeholder = @"点击搜索框跳转";
-    [self.search.searchButton addTarget:self action:@selector(touchSearchEvent:) forControlEvents:UIControlEventTouchUpInside];
+    self.search.cilckBlock = ^{
+         NSLog(@"您点击了搜索");
+    };
+    
     [self.view addSubview:self.search];
     [self.search mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(15);
@@ -46,10 +49,6 @@
         make.right.offset(-15);
         make.height.offset(40);
     }];
-}
-
--(void)touchSearchEvent:(UIButton *)btn{
-    NSLog(@"您点击了搜索");
 }
 
 @end

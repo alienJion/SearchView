@@ -2,7 +2,7 @@
 //  SearchView.m
 //  IMNetworking
 //
-//  Created by 杨炯 on 2019/6/25.
+//  Created by young on 2019/6/25.
 //  Copyright © 2019 ouwen. All rights reserved.
 //
 
@@ -10,6 +10,7 @@
 #import "Masonry.h"
 @interface SearchView()
 @property(nonatomic,strong)UIButton *imageButton;
+
 @end
 @implementation SearchView
 
@@ -20,12 +21,12 @@
         self.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:.8f];
         [self imageButton];
         [self secrchTextField];
-        [self searchButton];
         self.layer.cornerRadius = 10;
         self.layer.masksToBounds = YES;
     }
     return self;
 }
+
 - (void)setFilletValue:(CGFloat)filletValue{
      self.layer.cornerRadius = filletValue;
 }
@@ -59,16 +60,6 @@
         }];
     }
     return _secrchTextField;
-}
--(UIButton *)searchButton{
-    if (_searchButton == nil) {
-        _searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self addSubview:_searchButton];
-        [_searchButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.left.bottom.right.offset(0);
-        }];
-    }
-    return _searchButton;
 }
 
 @end

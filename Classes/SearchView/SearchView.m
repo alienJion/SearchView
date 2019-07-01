@@ -8,7 +8,7 @@
 
 #import "SearchView.h"
 #import "Masonry.h"
-@interface SearchView()
+@interface SearchView()<UITextFieldDelegate>
 @property(nonatomic,strong)UIButton *imageButton;
 
 @end
@@ -52,6 +52,7 @@
         _secrchTextField = [[UITextField alloc]init];
         [self addSubview:_secrchTextField];
         _secrchTextField.placeholder = @"搜索";
+        _secrchTextField.delegate = self;
         _secrchTextField.font = [UIFont systemFontOfSize:14.0f];
         _secrchTextField.returnKeyType = UIReturnKeySearch;
         [_secrchTextField mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -61,5 +62,10 @@
     }
     return _secrchTextField;
 }
-
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if(self.searchEvnetBlock){
+        self.searchEvnetBlock(textField.text);
+    }
+    return YES;
+}
 @end

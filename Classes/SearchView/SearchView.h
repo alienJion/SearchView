@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-typedef void(^SearchClickBlock)(void);
+typedef void(^SerachEventBlock)(NSString *searchKey);
 @interface SearchView : UIView
 /**
  左边图片
@@ -23,7 +23,10 @@ typedef void(^SearchClickBlock)(void);
  圆角弧度
  */
 @property(nonatomic,assign)CGFloat filletValue;
-
+/**
+ 点击键盘上的搜索
+ */
+@property(nonatomic,copy)SerachEventBlock searchEvnetBlock;
 
 @end
 

@@ -31,6 +31,11 @@
         make.right.offset(-15);
         make.height.offset(40);
     }];
+    
+    [self.search setSearchEvnetBlock:^(NSString * _Nonnull searchKey) {
+        NSLog(@"您输入的搜索内容：%@",searchKey);
+    }];
+    
 }
 
 @end
